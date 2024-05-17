@@ -2,7 +2,7 @@
 
 {
   # https://devenv.sh/basics/
-  env.GREET = "Aaron";
+  env.GREET = "Aaron, happy coding!!";
 
   # https://devenv.sh/packages/
   packages = with pkgs; [
@@ -16,7 +16,7 @@
   };
 
   # https://devenv.sh/scripts/
-  scripts.hello.exec = "echo hello from $GREET";
+  scripts.hello.exec = "echo Hey $GREET";
   
   scripts = {
     prisma.exec = "npx prisma $@";

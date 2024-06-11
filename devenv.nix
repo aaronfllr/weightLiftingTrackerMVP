@@ -7,12 +7,16 @@
   # https://devenv.sh/packages/
   packages = with pkgs; [
     postgresql_16
+    androidStudioPackages.dev
+    watchman
+    jdk
   ];
 
   env = {
     PRISMA_QUERY_ENGINE_LIBRARY = "${pkgs.prisma-engines}/lib/libquery_engine.node";
     PRISMA_QUERY_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/query-engine";
     PRISMA_SCHEMA_ENGINE_BINARY = "${pkgs.prisma-engines}/bin/schema-engine";
+    ANDROID_HOME = "/home/aaron/Android/Sdk";
   };
 
   # https://devenv.sh/scripts/
@@ -32,6 +36,8 @@
     echo "Running tests"
     git --version | grep "2.42.0"
   '';
+
+  
 
   # https://devenv.sh/services/
   # services.postgres.enable = true;
